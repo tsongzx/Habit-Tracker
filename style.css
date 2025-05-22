@@ -2,24 +2,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Quicksand", sans-serif;
-  }
-  
-  html {
-    font-size: 62.5%;
-  }
-  
-  .container {
-    width: 100%;
-    height: 100vh;
-    background-color: #12121f;
-    color: #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .calendar {
+    font-family: "Courier New";
+}
+
+html {
+    font-size: 70%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #12121f;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar {
     width: 45rem;
     height: 52rem;
     background-color: #222227;
@@ -29,7 +29,7 @@
   .month {
     width: 100%;
     height: 12rem;
-    background-color: #167e56;
+    background-color: #5864de;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,7 +44,7 @@
   }
   
   .month h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
@@ -93,19 +93,117 @@
     transition: background-color 0.2s;
   }
   
-  .days div:hover:not(.today) {
-    background-color: #262626;
-    border: 0.2rem solid #777;
+  .days div:hover:not(.today, .prev-month, .next-month) {
+    background-color: rgb(255, 110, 66);
+    opacity: 0.7;
     cursor: pointer;
   }
   
-  .prev-date,
-  .next-date {
+  .prev-month,
+  .next-month {
     opacity: 0.5;
   }
-
+  
   .today {
-    background-color: #167e56;
+    background-color: #4d48de;
   }
-  
-  
+
+  .clicked-day:not(.prev-month, .next-month) {
+    background-color: rgb(255, 110, 66);
+  }
+
+  .highlight {
+    background-color: red;
+  }
+
+  .habit-list {
+    width: 20rem;
+    height: 52rem;
+    background-color: #222227;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+    margin-left: 2rem;
+  }
+
+  .habit-search {
+    width: 100%;
+    height: 12rem;
+    background-color: #5864de;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    padding: 4.5rem 0.4rem;
+  }
+
+  ul {
+    margin-left: 2rem;
+    padding: 1.5rem 0rem;
+    list-style-position: inside;
+  }
+
+  ul li {
+    margin-left: 0.9rem;
+    padding: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 2rem;
+    cursor: pointer;
+  }
+
+  ul li.checked {
+    text-decoration: line-through;
+  }
+
+  .habit-search h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+  }
+  .habit-search input {
+    margin-top: 0.5rem;
+  }
+  .habit-search input[type=text] {
+    height: 2.7rem;
+    width: 90%;
+    opacity: 0.8;
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .habit-show li {
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: left;
+    align-items: center;
+    padding: 0 1.5rem;
+    line-height: 1.8;
+    list-style-type: none;
+   
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .delete {
+    margin-left: 8px;
+    margin-top: 3px;
+    right: 0;
+    top: 0;
+    padding: 4px 10px 4px 10px;
+    color: white;
+    font-size: 12px;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .color-block {
+    background-color:rgb(74, 51, 242);
+    padding: 0.05px 5px;
+    margin-right: 10px;
+  }
